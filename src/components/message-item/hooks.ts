@@ -102,7 +102,7 @@ export const useSpeech = (content: string, audioBinary?: string) => {
         try {
           player.current?.feed(units);
         } catch (error) {
-          console.warn(error);
+          // Audio feed error handled by player
         }
       }
     }

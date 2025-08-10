@@ -128,7 +128,7 @@ const EmbedModal = ({
   ];
 
   const onChange = (key: string) => {
-    console.log(key);
+    // Handle tab change if needed
   };
 
   return (

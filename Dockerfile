@@ -9,15 +9,14 @@ RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
 # Copy package files
-COPY frontend/web/package*.json frontend/web/package-lock.json ./
+COPY package*.json package-lock.json ./
 RUN npm ci
 
 # Rebuild the source code only when needed
 FROM base AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
-COPY frontend/web/ .
-COPY docs/ ../docs/
+COPY . .
 
 # Build the application
 RUN npm run build
@@ -29,7 +28,7 @@ FROM nginx:alpine AS production
 RUN apk add --no-cache curl
 
 # Copy custom nginx config
-COPY frontend/web/nginx.conf /etc/nginx/nginx.conf
+COPY nginx.conf /etc/nginx/nginx.conf
 
 # Copy the built app to nginx serve directory
 COPY --from=builder /app/dist /usr/share/nginx/html

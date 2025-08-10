@@ -18,7 +18,6 @@ let routeList: { name: string; value: string }[] = [];
 try {
   routeList = importAll(require.context('@/assets/svg', true, /\.svg$/));
 } catch (error) {
-  console.warn(error);
   routeList = [];
 }
 

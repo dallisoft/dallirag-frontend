@@ -6,7 +6,7 @@
     "dev": "cross-env UMI_DEV_SERVER_COMPRESS=none umi dev",
     "postinstall": "umi setup",
     "lint": "umi lint --eslint-only",
-    "prepare": "cd ../.. && husky frontend/web/.husky",
+    "prepare": "husky",
     "setup": "umi setup",
     "start": "npm run dev",
     "test": "jest --no-cache --coverage"

@@ -35,11 +35,11 @@ const RenameModal = ({
   };
 
   const onFinish = (values: any) => {
-    console.log('Success:', values);
+    // Form submission handled by handleOk
   };
 
   const onFinishFailed = (errorInfo: any) => {
-    console.log('Failed:', errorInfo);
+    // Form validation errors handled by validateFields
   };
 
   useEffect(() => {

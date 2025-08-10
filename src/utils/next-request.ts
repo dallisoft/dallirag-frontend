@@ -125,7 +125,6 @@ request.interceptors.response.use(
     return response;
   },
   function (error) {
-    console.log('🚀 ~ error:', error);
     errorHandler(error);
     return Promise.reject(error);
   },
